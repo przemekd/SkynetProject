@@ -1,0 +1,137 @@
+Airline,IATA,ICAO,Callsign,Founded,Airline
+Alaska Airlines,AS,ASA,ALASKA,1932,mainline
+Allegiant Air,G4,AAY,ALLEGIANT,1997,mainline
+American Airlines,AA,AAL,AMERICAN,1934,mainline
+Delta Air Lines,DL,DAL,DELTA,1924,mainline
+Frontier Airlines,F9,FFT,FRONTIER FLIGHT,1994,mainline
+Hawaiian Airlines,HA,HAL,HAWAIIAN,1929,mainline
+JetBlue Airways,B6,JBU,JETBLUE,1998,mainline
+Southwest Airlines,WN,SWA,SOUTHWEST,1967,mainline
+Spirit Airlines,NK,NKS,SPIRIT WINGS,1980,mainline
+Sun Country Airlines,SY,SCX,Sun Country,1982,mainline
+United Airlines,UA,UAL,UNITED,1926,mainline
+Virgin America,VX,VRD,REDWOOD,2004,mainline
+Air Choice One Airlines,3E,WBR,WEBER,1979,Regional
+Aero Contractors,,,,1979,Regional
+Air Evac,,,,1969,Regional
+AirStar Aviation Services,,,AIRSTAR,2004,Regional
+Air Sunshine,YI,RSI,AIR SUNSHINE,1982,Regional
+Air Wisconsin,ZW,AWI,WISCONSIN,1965,Regional
+Alaska Central Express,KO,AER,Ace Air,1996,Regional
+Alaska Seaplane Service,J5,,,1997[1],Regional
+Ameristar Jet Charter,None,AJI,AMERISTAR,2000,Regional
+Atlantic Airlines,EX,BJK,BLACKJACK,1982[2],Regional
+Bemidji Airlines,CH,BMJ,BEMIDJI,1946,Regional
+Bering Air,8E,BRG,BERING AIR,1979,Regional
+Berry Aviation,,BYA,BERRY,1983,Regional
+Big Island Air,,BIG,BIG ISLE,1985,Regional
+Blue Moon Aviation,,,,2003,Regional
+Boutique Air,4B,BTQ,BOUTIQUE,2007,Regional
+Branson Air Express,,,,,Regional
+Cape Air,9K,KAP,CAIR,1989,Regional
+CommutAir,C5,UCA,COMMUTAIR,1989,Regional
+Compass Airlines,CP,CPZ,COMPASS ROSE,2006,Regional
+Corporate Flight Management,,VTE,VOLUNTEER,1982,Regional
+Critical Air Medicine,,,,1984,Regional
+Delta Private Jets,,DPJ,JET CARD,1984,Regional
+Endeavor Air,9E,FLG,FLAGSHIP,,Regional
+Envoy Air,MQ,ENY,ENVOY,1984,Regional
+Ravn Alaska,7H,RVN,RAVN,2010,Regional
+Everts Air,5V,VTS,EVERTS,1978,Regional
+ExpressJet,EV,ASQ,ACEY,1986,Regional
+Express One International,EO,LHN,LONGHORN,1983,Regional
+Flight Alaska,4Y,TUD,TUNDRA,1955,Regional
+Frontier Flying Service,2F,FTA,FRONTIER-AIR,1950,Regional
+FS Air Service,4A,EYE,SOCKEYE,1986,Regional
+Gem Air,,,,,Regional
+GoJet Airlines,G7,GJS,LINDBERGH,2005,Regional
+Grand Canyon Airlines,YR,CVU,CANYON VIEW,1927,Regional
+Grant Aviation,GV,GUN,HOOT,1971,Regional
+Great Lakes Airlines,ZK,GLA,LAKES AIR,,Regional
+Horizon Air,QX,QXE,HORIZON AIR,1981,Regional
+ImagineAir,,IMG,IMAGINE,2005,Regional
+Island Air,WP,MKU,MOKU,1980,Regional
+Island Airways,,,,,Regional
+JetSuiteX,,,,2006,Regional
+Justice Prisoner and Alien Transportation System,,DOJ,Justice,,Regional
+Kalitta Charters,K9,KFS,KALITTA,,Regional
+Kenmore Air,,,,,Regional
+L-3 Flight International Aviation,,,,,Regional
+Merlin Airways,,MEI,AVALON,,Regional
+Mesa Airlines,YV,ASH,AIRSHUTTLE,,Regional
+Miami Air International,LL,BSK,BISCAYNE,,Regional
+Mid-Atlantic Freight,,,,,Regional
+Mokulele Airlines,MW,,,,Regional
+Millennium Aviation,,,,,Regional
+Cape Air,,,,,Regional
+New England Airlines,EJ,NEA,NEW ENGLAND,,Regional
+Omni Air International,OY,OAE,OMNI EXPRESS,,Regional
+OneJet,J1,,,2015,Regional
+Orange Air,,ORN,ORANGE JET,2011,Regional
+PenAir,KS,PEN,PENINSULA,,Regional
+Phoenix Air,,,,,Regional
+Piedmont Airlines,PT,PDT,PIEDMONT,,Regional
+PSA Airlines,OH,JIA,BLUE STREAK,,Regional
+Republic Airlines,XY,RPA,BRICKYARD,,Regional
+SeaPort Airlines,K5,SQH,SASQUATCH,,Regional
+Shuttle America,S5,TCF,MERCURY,,Regional
+Sierra Pacific Airlines,SI,SPA,SIERRA PACIFIC,1971,Regional
+Silver Airways,3M,SIL,SILVER WINGS,,Regional
+Skymax,,SMX,SKYMAX,1997,Regional
+Songbird Airways,5K,SGB,SONGBIRD,1990,Regional
+SkyWest Airlines,OO,SKW,SKYWEST,1972,Regional
+Southern Airways Express,,,,,Regional
+Sportsflight Airways,,,,1994,Regional
+Superior Aviation,SO,HKA,SPEND AIR,1979,Regional
+Swift Air,Q7,SWQ,SWIFTFLIGHT,1997,Regional
+Trans-Florida Airlines,,TFA,TRANS FLORIDA,1966,Regional
+Trans States Airlines,AX,LOF,WATERSKI,1982,Regional
+Ultimate Air Shuttle,,UJC,ULTIMATE,2009,Regional
+Via Airlines,VC,SRY,STINGRAY,1997,Regional
+Victory Air Transport,,,,2003,Regional
+West Air,,PCM,PAC VALLEY,1988,Regional
+Wiggins Airways,WG,WIG,WIGGINS AIRWAYS,1929,Regional
+Wings of Alaska,K5,SQH,SASQUACH,1982,Regional
+Xtra Airways,XP,CXP,CASINO EXPRESS,1987,Regional
+Airline,IATA,ICAO,Callsign,Founded,Cargo
+ABX Air,GB,ABX,ABEX,1980,Cargo
+Air Cargo Carriers,2Q,SNC,NIGHT CARGO,1986,Cargo
+AirNet Express,,USC,STAR CHECK,1974,Cargo
+Air Transport International,8C,ATN,AIR TRANSPORT,1978,Cargo
+Aloha Air Cargo,KH,AAH,ALOHA,1946,Cargo
+Alpine Air Express,5A,AIP,ALPINE AIR,1972,Cargo
+Ameriflight,A8,AMF,AMFLIGHT,1968,Cargo
+Amerijet International,M6,AJT,AMERIJET,1974,Cargo
+Ameristar Air Cargo,None,AJI,AMERISTAR,2000,Cargo
+Asia Pacific Airlines,P9,MGE,MAGELLAN,1998,Cargo
+Atlas Air Cargo,5Y,GTI,GIANT,1992,Cargo
+C&M Airways,,RWG,RED WING,1983,Cargo
+Castle Aviation,None,CSJ,CASTLE,1986,Cargo
+Centurion Air Cargo,WE,CWC,CHALLENGE CARGO,1985,Cargo
+Contract Air Cargo,,TSU,TRANSAUTO,1983,Cargo
+Corporate Air,OJ,CPT,AIRSPUR,1981,Cargo
+CSA Air,,IRO,IRON AIR,1998,Cargo
+Custom Air Transport,5R,CTT,CATT,1995,Cargo
+Empire Airlines,EM,CFS,EMPIRE,1977,Cargo
+Everts Air Cargo,3Z,VTS,EVERTS,1978,Cargo
+FedEx Express,FX,FDX,FEDEX,1971,Cargo
+Florida West International Airways,RF,FWL,FLORIDA WEST,1981,Cargo
+Freight Runners Express,,FRG,FREIGHT,1985,Cargo
+Kalitta Air,K4,CKS,CONNIE,1967,Cargo
+Key Lime Air,,,,,Cargo
+Logistic Air,,,,,Cargo
+Lynden Air Cargo,,,,,Cargo
+Martinaire,,,,,Cargo
+Mountain Air Cargo,C2,MTN,MOUNTAIN,,Cargo
+National Airlines,N8,NCR,NATIONAL CARGO,,Cargo
+Northern Air Cargo,NC,NAC,YUKON,1956,Cargo
+Polar Air Cargo,PO,PAC,POLAR,1993,Cargo
+Presidential Airways,,,,,Cargo
+Ryan Air Services,7S,RYA,RYAN AIR,,Cargo
+Sky Lease Cargo,GG,KYE,TRADEWINDS EXPRESS,1969,Cargo
+Skyway Enterprises,KI,SKZ,SKYWAY-INC,1981,Cargo
+Southern Air,9S,SOO,SOUTHERN AIR,1999,Cargo
+Tepper Aviation,,,,1987,Cargo
+Transair,KH,MUI,MAUI,1982,Cargo
+UPS Airlines,5X,UPS,UPS,1988,Cargo
+USA Jet Airlines,UJ,JUS,JET USA,1994,Cargo

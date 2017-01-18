@@ -91,6 +91,7 @@ matched_pos.count
 
 // to extract what we need :
 
+val adbs_09 = spark.read.json("hdfs:///data/adbs_exchange/2017-01-09").filter($"Bad" === false)
 val adbs_distinct_airplane_09 = spark.sql("select distinct Icao, Type, OpIcao from adbs_09").cache()
 val adbs_grouped_by_type_and_airline_09 = adbs_distinct_airplane_09.groupBy("Type", "OpIcao").cache()
 val day_09 = adbs_grouped_by_type_and_airline_09.count.orderBy($"count".desc).cache()

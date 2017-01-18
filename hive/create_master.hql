@@ -40,4 +40,4 @@ WITH SERDEPROPERTIES (
    "escapeChar"    = "\\"
 )
 STORED AS TEXTFILE
-LOCATION '/data/flightdata/aircraft-registrations/MASTER';
+LOCATION '/data/flightdata/faa/master';

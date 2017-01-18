@@ -18,4 +18,4 @@ WITH SERDEPROPERTIES (
    "escapeChar"    = "\\"
 )
 STORED AS TEXTFILE
-LOCATION '/data/flightdata/aircraft-registrations/';
+LOCATION '/data/flightdata/faa/aircraft_references';

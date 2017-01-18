@@ -55,3 +55,15 @@ spark.sql("select distinct hexid, type_aircraft, name, n_number from sheldon_ads
 // 7 - Weight-shift-control
 // 8 - Powered Parachute
 // 9 - Gyroplane
+
+// now what about adsb exchange data
+val matched = spark.sql("select distinct s.Icao, m.type_aircraft, m.name, m.n_number from adbs_09 s left join faa_master m on s.Icao=rtrim(m.mode_s_code_hex)").cache()
+matched.count
+// res73: Long = 258700
+
+val matched_pos = matched.filter(matched("n_number").isNotNull).cache()
+matched_pos.count
+// res72: Long = 17039
+
+// so less than 6.6% of adbsexchange data can be matched against master!
+// that's pretty strange

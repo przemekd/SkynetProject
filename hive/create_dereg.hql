@@ -1,0 +1,47 @@
+create external table faa_dereg (
+        N_NUMBER String,
+        SERIAL_NUMBER String,
+        MFR_MDL_CODE String,
+        STATUS_CODE String,
+        NAME String,
+        STREET_MAIL String,
+        STREET2_MAIL String,
+        CITY_MAIL String,
+        STATE_ABBREV_MAIL String,
+        ZIP_CODE_MAIL String,
+        ENG_MFR_MDL String,
+        YEAR_MFR String,
+        CERTIFICATION String,
+        REGION String,
+        COUNTY_MAIL String,
+        COUNTRY_MAIL String,
+        AIR_WORTH_DATE String,
+        CANCEL_DATE String,
+        MODE_S_CODE String,
+        INDICATOR_GROUP String,
+        EXP_COUNTRY String,
+        LAST_ACT_DATE String,
+        CERT_ISSUE_DATE String,
+        STREET_PHYSICAL String,
+        STREET2_PHYSICAL String,
+        CITY_PHYSICAL String,
+        STATE_ABBREV_PHYSICAL String,
+        ZIP_CODE_PHYSICAL String,
+        COUNTY_PHYSICAL String,
+        COUNTRY_PHYSICAL String,
+        OTHER_NAMES1 String,
+        OTHER_NAMES2 String,
+        OTHER_NAMES3 String,
+        OTHER_NAMES4 String,
+        OTHER_NAMES5 String,
+        KIT_MFR String,
+        KIT_MODEL String,
+        MODE_S_CODE_HEX String)
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.OpenCSVSerde'
+WITH SERDEPROPERTIES (
+   "separatorChar" = ",",
+   "quoteChar"     = "'",
+   "escapeChar"    = "\\"
+)
+STORED AS TEXTFILE
+LOCATION '/data/flightdata/faa/dereg';

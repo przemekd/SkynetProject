@@ -96,3 +96,51 @@ val adbs_distinct_airplane_09 = spark.sql("select distinct Icao, Type, OpIcao fr
 val adbs_grouped_by_type_and_airline_09 = adbs_distinct_airplane_09.groupBy("Type", "OpIcao").cache()
 val day_09 = adbs_grouped_by_type_and_airline_09.count.orderBy($"count".desc).cache()
 day_09.show
+
+val masterDF = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex from faa_master")
+
+val icaos_distinct = adbs_distinct_airplane_09.select("Icao").distinct
+icaos_distinct.createOrReplaceTempView("icaos_distinct")
+val joined = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex, Icao from masterDF m left join icaos_distinct i on i.Icao == trim(m.mode_s_code_hex)").cache()
+joined.createOrReplaceTempView("joined")
+
+joined.count
+// res124: Long = 315314
+
+joined.filter($"Icao".isNotNull).count
+// res148: Long = 17039
+
+val not_covered = joined.filter($"Icao".isNull)
+
+
+//val rita_carrier = rita.select("tailnum", "uniquecarrier")
+val rita_carrier = spark.sql("SELECT tailnum, uniquecarrier, max(flightdate) as date from rita group by tailnum, uniquecarrier").cache()
+
+rita_carrier.createOrReplaceTempView("rita_carrier")
+
+val rita_max = spark.sql("select max(date) as date, tailnum, 1 as matched from rita_carrier group by tailnum").cache()
+rita_max.createOrReplaceTempView("rita_max")
+
+val rita_max_joined = spark.sql("select m.matched, m.tailnum, m.date, c.uniquecarrier from rita_carrier c left join rita_max m on m.tailnum = c.tailnum and m.date = c.date").cache()
+val unique_tailnums = rita_max_joined.filter($"matched".isNotNull)
+
+val carrier_decode = hiveContext.sql("select * from carrier_decode")
+carrier_decode.createOrReplaceTempView("carrier_decode")
+
+unique_tailnums.createOrReplaceTempView("unique_tailnums")
+
+// Dont do this
+// val tailnum_to_carrier = spark.sql("select tailnum, u.uniquecarrier, c.unique_carrier_name from unique_tailnums u left join carrier_decode c on c.unique_carrier=u.uniquecarrier").cache()
+
+val masterDF = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex, type_aircraft from faa_master")
+masterDF.createOrReplaceTempView("masterDF")
+val master_with_icao = spark.sql("select n_number, mfr_mdl_code, trim(mode_s_code_hex) as mode_s_code_hex, type_aircraft,Icao from masterDF m left join icaos_distinct i on i.Icao == trim(m.mode_s_code_hex)").cache()
+
+val master_with_icao2 = spark.sql("select n_number, mfr_mdl_code, trim(mode_s_code_hex) as mode_s_code_hex, type_aircraft,Icao from masterDF m left join icaos_distinct i on i.Icao == trim(m.mode_s_code_hex)")
+
+master_with_icao2.createOrReplaceTempView("master_with_icao2")
+
+val master_enhanced = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex, type_aircraft, Icao, uniquecarrier, tailnum from master_with_icao2 m left join unique_tailnums u on u.tailnum = concat(\"N\", m.n_number)")
+
+val master_airlines = master_enhanced.filter($"uniquecarrier".isNotNull).cache()
+

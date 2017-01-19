@@ -1,7 +1,8 @@
 // How did we process adsb data
-//
-//
-//
+// val adbs_09 = spark.read.json("hdfs:///data/adbs_exchange/2017-01-09").filter($"Bad" === false)
+// val adbs_distinct_airplane_09 = spark.sql("select distinct Icao, Type, OpIcao from adbs_09").cache()
+// adbs_distinct_airplane_09.write.format("csv").save("hdfs:///data/adbs_extracted")
+// Takes too long to show on demo
 
 // The final process
 // load all tables from hive

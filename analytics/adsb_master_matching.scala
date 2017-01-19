@@ -102,6 +102,7 @@ val masterDF = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex from fa
 val icaos_distinct = adbs_distinct_airplane_09.select("Icao").distinct
 icaos_distinct.createOrReplaceTempView("icaos_distinct")
 val joined = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex, Icao from masterDF m left join icaos_distinct i on i.Icao == trim(m.mode_s_code_hex)").cache()
+joined.createOrReplaceTempView("joined")
 
 joined.count
 // res124: Long = 315314
@@ -112,4 +113,12 @@ joined.filter($"Icao".isNotNull).count
 val not_covered = joined.filter($"Icao".isNull)
 
 
-val rita_carrier = rita.select("tailnum", "uniquecarrier")
+//val rita_carrier = rita.select("tailnum", "uniquecarrier")
+val rita_carrier = spark.sql("SELECT tailnum, uniquecarrier, max(flightdate) as date from rita group by tailnum, uniquecarrier").cache()
+
+rita_carrier.createOrReplaceTempView("rita_carrier")
+
+val rita_max = spark.sql("select max(date), tailnum, 1 as matched from rita_carrier group by tailnum").cache()
+rita_max.createOrReplaceTempView("rita_max")
+
+

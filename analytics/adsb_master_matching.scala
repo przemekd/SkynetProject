@@ -96,3 +96,20 @@ val adbs_distinct_airplane_09 = spark.sql("select distinct Icao, Type, OpIcao fr
 val adbs_grouped_by_type_and_airline_09 = adbs_distinct_airplane_09.groupBy("Type", "OpIcao").cache()
 val day_09 = adbs_grouped_by_type_and_airline_09.count.orderBy($"count".desc).cache()
 day_09.show
+
+val masterDF = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex from faa_master")
+
+val icaos_distinct = adbs_distinct_airplane_09.select("Icao").distinct
+icaos_distinct.createOrReplaceTempView("icaos_distinct")
+val joined = spark.sql("select n_number, mfr_mdl_code, mode_s_code_hex, Icao from masterDF m left join icaos_distinct i on i.Icao == trim(m.mode_s_code_hex)").cache()
+
+joined.count
+// res124: Long = 315314
+
+joined.filter($"Icao".isNotNull).count
+// res148: Long = 17039
+
+val not_covered = joined.filter($"Icao".isNull)
+
+
+val rita_carrier = rita.select("tailnum", "uniquecarrier")

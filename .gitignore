@@ -1,2 +1,5 @@
+.DS_Store
 data/*
 !data/us_airlines.csv
+!/data/airlines_planes.csv
+!/data/popular_planes.csv

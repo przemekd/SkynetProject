@@ -199,7 +199,7 @@ spark.sql("select model, count(*) as cnt from master_final group by model order 
 // [EMB-120,32]
 
 // Group by airlines
-spark.sql("select model, unique_carrier_name, count(*) as cnt from master_final group by model, unique_carrier_name where (model = \"CL-600\" or model = \"737\" or model = \"757\") order by cnt DESC").collect.foreach(println)
+spark.sql("select model, unique_carrier_name, count(*) as cnt from master_final where (model = \"CL-600\" or model = \"737\" or model = \"757\") group by model, unique_carrier_name order by cnt DESC").collect.foreach(println)
 // [737,Southwest Airlines Co.,80]
 // [CL-600,Endeavor Air Inc.,75]
 // [757,Delta Air Lines Inc.,68]
